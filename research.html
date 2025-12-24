@@ -34,44 +34,48 @@
     <div id="site_content">
 
         <!-- insert the page content here -->
-        <h1>Learned Image Codec</h1>
-        <p>Traditional image compresion standards have been developed for more than 30 years. On the other hand, with the developments of neural network, learned image compression (LIC) has shown a superior coding ability than the traditional image compression standards. Two proposed LIC networks (CVPR'20, CVPR'23) are given below.</p>
+        <h1>Learned Image Compression</h1>
+        <p>Traditional image compression standards have been developed over more than 30 years. In contrast, with the rapid advances in neural networks, learned image compression (LIC) has demonstrated superior coding performance compared with traditional image compression standards. Two representative LIC networks proposed in CVPR 2020 and CVPR 2023 are presented below.</p>
         <div style="text-align:center">
           <img src="cvpr20.png" width="760" height="239"> 
-          <p> Proposed LIC with GMM and attention, which was the state-of-the-art until 2020. </p>
+          <p> We proposed a LIC model incorporating a Gaussian mixture model (GMM) and attention mechanisms, achieving state-of-the-art performance in 2020. </p>
           <img src="cvpr23.png" width="760" height="239">
-          <p> Proposed LIC with mixed transformer and CNN, which was the state-of-the-art until 2023.</p>
+          <p> We proposed a LIC framework that combines transformer and CNN architectures, achieving state-of-the-art performance in 2023.</p>
         </div>
 
-        <h1>Learned Video Codec</h1>
-        <p>Traditional video compresion standards have also been developed for over 30 years. Similar to the case of image compression, learned video compression (LVC) has demonstrated superior coding efficiency compared to traditional video compression standards. The proposed LVC network (CVPR'25) is shown below.</p>
+        <h1>Learned Video Compression</h1>
+        <p>Traditional video compression standards have also been developed for over 30 years. Similar to image compression, learned video compression (LVC) has demonstrated superior coding efficiency compared with traditional video compression standards. The proposed LVC network (CVPR 2025) is shown below.</p>
         <div style="text-align:center">
           <img src="cvpr25.png" width="760" height="239"> 
           <p> Proposed LVC with feature level attention. </p>
         </div>
 
         <h1>Image Coding for Machine</h1>
-        <p>Cisco reported that the communication for the machine-to-machine will occupy up to 50% of all the communication in the coming IoT society. Therefore, reducing the transmission burden between machines becomes extremely important. Differently from human vision, image coding for machine aims to improve the accuracy of machine vision tasks such as object detection/tracking.</p>
+        <p>Cisco has reported that machine-to-machine communication will account for up to 50% of all network traffic in the forthcoming IoT society. Consequently, reducing the transmission burden between machines has become increasingly important. Unlike human-oriented visual coding, image coding for machines aims to improve the accuracy of machine vision tasks, such as object detection and tracking.</p>
         <div style="text-align:center">
           <img src="pcs22.png" width="760" height="239"> 
           <p> Proposed semantic segmentation in learned compressed domain</p>
         </div>
 
-        <h1>FPGA Neural Network Engine</h1>
-        <p>Among various hardware platforms, FPGA has the advantage of high hardware utilization and power efficiency compared with CPU and GPU. In addition, compared with ASIC, FPGA is more flexible and reconfigurable which can keep up with the fast developments of neural network models. We developed an FPGA neural engine with fine-grained pipeline, and built a FPGA codec system for LIC.</p>
+        <h1>FPGA-Based LIC Systems</h1>
+        <p>Among various hardware platforms, FPGAs offer higher hardware utilization and superior power efficiency compared with CPUs and GPUs. In addition, relative to ASICs, FPGAs provide greater flexibility and reconfigurability, enabling them to adapt to the rapid evolution of neural network models. Leveraging these advantages, we developed an FPGA-based neural engine with a fine-grained pipeline architecture and applied it to the LIC system.</p>
         <div style="text-align:center">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/-unSbqsUS8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <p> We have a camera (right bottom) which captures the 720p 30fps raw video in the right display. Then one Xilinx FPGA board VCU118 is in charge of encoding. The encoded bitstream is sent to another FPGA board for the decoding. Finally, the decoded video is shown in the left display.</p>
+          <p> A camera (bottom right) captures raw video at 720p and 30 fps, which is displayed on the right monitor. The captured video is then encoded by a Xilinx VCU118 FPGA board. The resulting bitstream is transmitted to a second FPGA board for decoding. Finally, the decoded video is displayed on the left monitor.</p>
         </div>
         <div style="text-align:center">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/Y4QO2h0LEDQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <p> To evaluate the latency, we capture the real-time timestamps, and the difference between the raw timestamp and decoded timestamp is the end-to-end latency, which is around 560 ms. We also use the power meter to evaluate the real power for the overall FPGA board.</p>
+          <p> To evaluate the system latency, real-time timestamps are embedded and captured during processing. The difference between the original (raw) timestamp and the decoded timestamp is defined as the end-to-end latency, which is approximately 560 ms. In addition, a power meter is used to measure the actual power consumption of the entire FPGA board.</p>
+        </div>
+        <div style="text-align:center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/9EYDdCLGlNY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <p> The encoder is implemented on a Xilinx VCU118 FPGA board, while the decoder is implemented on a Xilinx KU115 FPGA board. The video is correctly decoded and displayed on the left monitor, demonstrating the cross-platform coding capability of the proposed system.</p>
         </div>
 
         <h1>ASIC Chip Design</h1>
         <div style="text-align:center">
           <img src="isscc16.png" width="300" height="300"> 
-          <p>Developed 8K@120fps HEVC decoder chip in which I was in charge of Inverse Transform (IT) and De-quantization (IQ) components.</p>
+          <p>Developed an 8K@120 fps HEVC decoder chip, in which I was responsible for the inverse transform (IT) and dequantization (IQ) modules.</p>
         </div>
 
     </div>
