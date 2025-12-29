@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>SUN Lab</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <link rel="stylesheet" type="text/css" href="/assets/style.css" />
+</head>
+
+<body>
+
+<div class="lang-switch">
+  <a href="/en/" class="active">EN</a>
+  <span>|</span>
+  <a href="/ja/">JP</a>
+</div>
+
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html"><span class="logo_colour">SUN Lab</span></a></h1>
+          <h2>Yokohama National University</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="index.html">Home</a></li>
+          <li><a href="publications.html">Publication</a></li>
+          <li><a href="member.html">Member</a></li>
+          <li class="selected"><a href="research.html">Research</a></li>
+          <li><a href="event.html">Event</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+
+        <!-- insert the page content here -->
+        <h1>Learned Image Compression</h1>
+        <p>Traditional image compression standards have been developed over more than 30 years. In contrast, with the rapid advances in neural networks, learned image compression (LIC) has demonstrated superior coding performance compared with traditional image compression standards. Two representative LIC networks proposed in CVPR 2020 and CVPR 2023 are presented below.</p>
+        <div style="text-align:center">
+          <img src="/assets/cvpr20.png" width="760" height="239"> 
+          <p> We proposed a LIC model incorporating a Gaussian mixture model (GMM) and attention mechanisms, achieving state-of-the-art performance in 2020. </p>
+          <img src="/assets/cvpr23.png" width="760" height="239">
+          <p> We proposed a LIC framework that combines transformer and CNN architectures, achieving state-of-the-art performance in 2023.</p>
+        </div>
+
+        <h1>Learned Video Compression</h1>
+        <p>Traditional video compression standards have also been developed for over 30 years. Similar to image compression, learned video compression (LVC) has demonstrated superior coding efficiency compared with traditional video compression standards. The proposed LVC network (CVPR 2025) is shown below.</p>
+        <div style="text-align:center">
+          <img src="/assets/cvpr25.png" width="760" height="239"> 
+          <p> Proposed LVC with feature level attention. </p>
+        </div>
+
+        <h1>Image Coding for Machine</h1>
+        <p>Cisco has reported that machine-to-machine communication will account for up to 50% of all network traffic in the forthcoming IoT society. Consequently, reducing the transmission burden between machines has become increasingly important. Unlike human-oriented visual coding, image coding for machines aims to improve the accuracy of machine vision tasks, such as object detection and tracking.</p>
+        <div style="text-align:center">
+          <img src="/assets/pcs22.png" width="760" height="239">
+          <p> Proposed semantic segmentation in learned compressed domain</p>
+        </div>
+
+        <h1>FPGA-Based LIC Systems</h1>
+        <p>Among various hardware platforms, FPGAs offer higher hardware utilization and superior power efficiency compared with CPUs and GPUs. In addition, relative to ASICs, FPGAs provide greater flexibility and reconfigurability, enabling them to adapt to the rapid evolution of neural network models. Leveraging these advantages, we developed an FPGA-based neural engine with a fine-grained pipeline architecture and applied it to the LIC system.</p>
+        <div style="text-align:center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/-unSbqsUS8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <p> A camera (bottom right) captures raw video at 720p and 30 fps, which is displayed on the right monitor. The captured video is then encoded by a Xilinx VCU118 FPGA board. The resulting bitstream is transmitted to a second FPGA board for decoding. Finally, the decoded video is displayed on the left monitor.</p>
+        </div>
+        <div style="text-align:center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Y4QO2h0LEDQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <p> To evaluate the system latency, real-time timestamps are embedded and captured during processing. The difference between the original (raw) timestamp and the decoded timestamp is defined as the end-to-end latency, which is approximately 560 ms. In addition, a power meter is used to measure the actual power consumption of the entire FPGA board.</p>
+        </div>
+        <div style="text-align:center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/9EYDdCLGlNY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <p> The encoder is implemented on a Xilinx VCU118 FPGA board, while the decoder is implemented on a Xilinx KU115 FPGA board. The video is correctly decoded and displayed on the left monitor, demonstrating the cross-platform coding capability of the proposed system.</p>
+        </div>
+
+        <h1>ASIC Chip Design</h1>
+        <div style="text-align:center">
+          <img src="/assets/isscc16.png" width="300" height="300"> 
+          <p>Developed an 8K@120 fps HEVC decoder chip, in which I was responsible for the inverse transform (IT) and dequantization (IQ) modules.</p>
+        </div>
+
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      <p><a href="index.html">Home</a> | <a href="publications.html">Publications</a> | <a href="member.html">Member</a> | <a href="research.html">Research</a> | <a href="event.html">Event</a></p>
+      <p><a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a></p>
+    </div>
+  </div>
+</body>
+</html>

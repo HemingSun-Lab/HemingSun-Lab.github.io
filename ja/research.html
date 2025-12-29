@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>SUN Lab</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <link rel="stylesheet" type="text/css" href="/assets/style.css" />
+</head>
+
+<body>
+
+<div class="lang-switch">
+  <a href="/en/" class="active">EN</a>
+  <span>|</span>
+  <a href="/ja/">JP</a>
+</div>
+
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html"><span class="logo_colour">SUN Lab</span></a></h1>
+          <h2>Yokohama National University</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="index.html">Home</a></li>
+          <li><a href="publications.html">Publication</a></li>
+          <li><a href="member.html">Member</a></li>
+          <li class="selected"><a href="research.html">Research</a></li>
+          <li><a href="event.html">Event</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+
+        <!-- insert the page content here -->
+        <h1>学習型画像圧縮（Learned Image Compression: LIC）</h1>
+        <p>従来の画像圧縮標準は、30年以上にわたって開発されてきました。一方、ニューラルネットワークの急速な進展に伴い、学習型画像圧縮は、従来の画像圧縮標準と比較して優れた符号化性能を示しています。以下に、CVPR 2020 および CVPR 2023 にて提案された代表的な LIC ネットワークを示します。</p>
+        <div style="text-align:center">
+          <img src="/assets/cvpr20.png" width="760" height="239"> 
+          <p> 我々は，ガウス混合モデルと注意機構を組み込んだ学習型画像圧縮モデルを提案し、2020年において最先端性能を達成した。</p>
+          <img src="/assets/cvpr23.png" width="760" height="239">
+          <p> 我々は，TransformerとCNNを融合した学習型画像圧縮フレームワークを提案し、2023年において最先端性能を達成した。</p>
+        </div>
+
+        <h1>学習型動画像圧縮（Learned Video Compression: LVC）</h1>
+        <p>従来の動画像圧縮標準は、30年以上にわたって発展してきた。画像圧縮と同様に、学習型動画像圧縮は、従来の動画像圧縮標準と比較して優れた符号化効率を示している。以下に、提案する学習型動画像圧縮ネットワーク（CVPR 2025）を示す。</p>
+        <div style="text-align:center">
+          <img src="/assets/cvpr25.png" width="760" height="239"> 
+          <p> 特徴レベル注意機構（Feature-level Attention）を導入した学習型動画像圧縮（LVC）</p>
+        </div>
+
+        <h1>マシン向け画像符号化（Image Coding for Machines）</h1>
+        <p>Cisco の報告によると、将来の IoT 社会において、マシン・ツー・マシン（Machine-to-Machine：M2M）通信は、全ネットワークトラフィックの最大50％を占めると予測されています。そのため、機械間通信における伝送負荷の低減は、ますます重要になっています。人間向けの視覚符号化とは異なり、マシン向け画像符号化は、物体検出や追跡といった機械視覚タスクの精度向上を目的としています。</p>
+        <div style="text-align:center">
+          <img src="/assets/pcs22.png" width="760" height="239">
+          <p> 学習型圧縮ドメインにおける意味セグメンテーションの提案</p>
+        </div>
+
+        <h1>FPGA ベース学習型画像圧縮（LIC）システム</h1>
+        <p>さまざまなハードウェアプラットフォームの中で、FPGA は CPU や GPU と比較して高いハードウェア利用率と優れた電力効率を有しています。また、ASIC と比べて柔軟性および再構成性に優れており、ニューラルネットワークモデルの急速な進化にも対応可能です。これらの利点を活かし、我々は微細粒度パイプラインアーキテクチャを備えた FPGA ベースのニューラルエンジンを開発し、学習型画像圧縮（LIC）システムに適用しました。</p>
+        <div style="text-align:center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/-unSbqsUS8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <p> 右下のカメラで 720p・30 fps の生動画を撮影し、その映像を右側のモニタに表示します。撮影された映像は、Xilinx VCU118 FPGA ボードによって符号化されます。生成されたビットストリームは、別の FPGA ボードに送信され、そこで復号されます。最後に、復号された映像が左側のモニタに表示されます。</p>
+        </div>
+        <div style="text-align:center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Y4QO2h0LEDQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <p> システム遅延を評価するため、処理過程においてリアルタイムのタイムスタンプを埋め込み、これを取得しています。元の（生映像の）タイムスタンプと復号後のタイムスタンプとの差をエンドツーエンド遅延と定義しており、その値は約 560 ms です。さらに、電力計を用いて FPGA ボード全体の実消費電力を測定しています。</p>
+        </div>
+        <div style="text-align:center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/9EYDdCLGlNY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <p> エンコーダは Xilinx VCU118 FPGA ボード上に実装され、デコーダは Xilinx KU115 FPGA ボード上に実装されています。映像は正しく復号され、左側のモニタに表示されており、提案システムのクロスプラットフォーム符号化能力を実証しています。</p>
+        </div>
+
+        <h1>ASIC チップ設計</h1>
+        <div style="text-align:center">
+          <img src="/assets/isscc16.png" width="300" height="300"> 
+          <p>8K・120 fps 対応の HEVC デコーダチップを開発しました。私は、その中で逆変換（Inverse Transform：IT）および逆量子化（Inverse Quantization：IQ）モジュールを担当しました。</p>
+        </div>
+
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      <p><a href="index.html">Home</a> | <a href="publications.html">Publications</a> | <a href="member.html">Member</a> | <a href="research.html">Research</a> | <a href="event.html">Event</a></p>
+      <p><a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a></p>
+    </div>
+  </div>
+</body>
+</html>
