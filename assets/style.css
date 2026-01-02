@@ -134,7 +134,7 @@ h5
   left: 0;}
 
 #logo h1, #logo h2
-{ font: normal 300% 'century gothic', arial, sans-serif;
+{ font: normal 350% 'century gothic', arial, sans-serif;
   border-bottom: 0;
   text-transform: none;
   margin: 0 0 0 9px;}
@@ -409,7 +409,6 @@ summary:hover {
 }
 
 .member-section h1 {
-  border-left: 4px solid #003F7F;
   padding-left: 10px;
   font-size: 1.5em;
   margin-top: 40px;
@@ -489,9 +488,9 @@ summary:hover {
 }
 
 .lang-switch a.active {
-  background-color: #0066cc;  /* YNU 蓝系 */
+  background-color: #003F7F;
   color: #fff;
-  border-color: #0066cc;
+  border-color: #003F7F;
 }
 
 .lang-switch a:hover{
