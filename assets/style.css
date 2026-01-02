@@ -17,21 +17,25 @@ p
 img
 { border: 0;}
 
-h1, h2, h3, h4, h6
-{ color: #362C20;
-  letter-spacing: 0em;
-  padding: 0 0 5px 0;}
-
-h1, h2, h3
-{ font: normal 170% 'century gothic', arial;
+h1, h2, h3 {
+  font: normal 170% 'Century Gothic', Arial, sans-serif;
   margin: 0 0 15px 0;
   padding: 15px 0 5px 0;
-  color: #000;}
+  color: #000;
+  letter-spacing: 0em;
+}
+
+h4, h6 {
+  color: #362C20;
+  letter-spacing: 0em;
+  padding: 0 0 5px 0;
+}
 
 h2
-{ font-size: 160%;
-  padding: 9px 0 5px 0;
-  color: #009FBC;}
+{ font-size: 150%;
+  font-weight: bold;
+  padding: 9px 0 0px 0;
+  color: #003F7F;}
 
 h3
 { font-size: 140%;
@@ -50,7 +54,7 @@ h5
 a, a:hover
 { outline: none;
   text-decoration: underline;
-  color: #00C6F0;}
+  color: #005BAC;}
 
 a:hover
 { text-decoration: none;}
@@ -142,7 +146,9 @@ h5
   text-decoration: none;}
 
 #logo_text h1 a .logo_colour
-{ color: #00C6F0;}
+{ color: #003F7F;
+  font-weight: bold;
+}
 
 #logo_text a:hover .logo_colour
 { color: #DDD;}
@@ -186,14 +192,15 @@ ul#menu li.selected a
 
 ul#menu li.selected
 { margin: 8px 4px 0 13px;
-  background: #00C6F0;}
-
-ul#menu li.selected a, ul#menu li.selected a:hover
-{ background: #00C6F0;
+  background: #003F7F;
   color: #FFF;}
 
+ul#menu li.selected a
+{ background: #003F7F;
+}
+
 ul#menu li a:hover
-{ color: #323232;}
+{ color: #FFF;}
 
 #site_content
 { 
@@ -236,10 +243,9 @@ ul#menu li a:hover
 .sidebar h3 {
   font-size: 1.2em;
   font-weight: bold;
-  color: #009FBC;
+  color: #003F7F;
   margin: 0 0 10px 0;
   padding-left: 6px;
-  border-left: 4px solid #00C6F0;
   background: none;
 }
 
@@ -255,16 +261,26 @@ ul#menu li a:hover
   padding: 0 0 0 0px;
   margin: auto auto auto auto;
   float: right;}
-  
-#content ul
-{ margin: 2px 0 22px 0px;}
 
 #content ul li, .sidebar ul li
-{ list-style-type: none;
-  background: url(bullet.png) no-repeat;
-  margin: 0 0 0 0; 
-  padding: 0 0 5px 10px;
-  line-height: 1.5em;}
+{ list-style-type: disc;
+  margin: 0 0 6px 0; 
+  padding: 0;
+  line-height: 1.6em;}
+
+#content ul,
+.section-card ul {
+  margin-left: 0;          /* ✅ 不再向右缩进 */
+  padding-left: 0;         /* ✅ 清空默认 padding */
+  list-style-position: inside;  /* ✅ bullet 和文字共用起始线 */
+}
+
+#content ul li,
+.section-card ul li {
+  padding-left: 0;
+  margin-left: 0;
+  line-height: 1.6em;
+}
 
 #footer
 { width: 100%;
@@ -365,7 +381,6 @@ table tr td
 summary {
   cursor: pointer;
   font-weight: bold;
-  font-size: 1.1em;
   padding: 6px 10px;
   background-color: #f4f4f4;
   border: 1px solid #ccc;
@@ -374,13 +389,13 @@ summary {
 }
 
 summary:hover {
-  cursor: grab;    /* 鼠标悬停时是抓手 */
+  cursor: pointer;    /* 鼠标悬停时是抓手 */
 }
 
 .section-card {
   background: #f9f9f9;
   border-radius: 10px;
-  padding: 22px 18px;
+  padding: 0 0;
   margin: 0 0 20px 0;
   box-shadow: 0 2px 8px #0001;
 }
@@ -394,7 +409,7 @@ summary:hover {
 }
 
 .member-section h1 {
-  border-left: 4px solid #00C6F0;
+  border-left: 4px solid #003F7F;
   padding-left: 10px;
   font-size: 1.5em;
   margin-top: 40px;
