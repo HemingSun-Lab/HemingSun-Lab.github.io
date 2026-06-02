@@ -38,28 +38,37 @@
     </div>
     <div id="site_content">
 	    <div id="sidebar_container">
-        <div class="sidebar">
+        <div class="sidebar join-us">
           <div class="sidebar_item">
             <!-- insert your sidebar items here -->
-            <h3>Noticeboard</h3>
-            <ul>
-              <li> I am now recruiting <strong>Master</strong>, <strong>Doctor</strong> and <strong>Postdoc</strong> students. </li>
-              <li> If you are interested in my lab, please send me your <strong>CV</strong>, <strong>grade sheet</strong>, <strong>language test results</strong> and <strong>research plan</strong>. </li>
+            <h3>Join Us</h3>
+            <p class="join-intro">We welcome motivated students and researchers to join our lab.</p>
+            <ul class="join-roles">
+              <li><span>MS</span>Master Students</li>
+              <li><span>PhD</span>PhD Students</li>
+              <li><span>PD</span>Postdoctoral Researchers</li>
             </ul>
+            <div class="join-school">
+              <strong>School of Computing</strong>
+              <span>Institute of Science Tokyo</span>
+            </div>
+            <div class="join-ranking">
+              <span class="ranking-label">QS Subject Rankings 2026</span>
+              <strong>#18 <small>Worldwide</small></strong>
+              <span>Computer Science &amp; Information Systems</span>
+              <em>#1 in Japan</em>
+            </div>
           </div>
         </div>
-        <div class="sidebar">
+        <div class="sidebar resources">
           <div class="sidebar_item">
-            <h3>Related Links</h3>
+            <h3>Related Resources</h3>
+            <h4>Profiles</h4>
             <ul>
               <li><a href="https://scholar.google.co.jp/citations?hl=ja&user=LtkiCFcAAAAJ">My Google Scholar</a></li>
               <li><a href="https://dblp.org/pid/119/0191.html">My DBLP</a></li>
             </ul>
-          </div>
-        </div>
-        <div class="sidebar">
-          <div class="sidebar_item">
-            <h3>Related Codes</h3>
+            <h4>Codes</h4>
             <ul>
               <li><a href="https://github.com/InterDigitalInc/CompressAI">CompressAI</a></li>
               <li><a href="https://github.com/jmliu206/LIC_TCM">TCM (CVPR'23 Highlight)</a></li>
@@ -83,6 +92,21 @@
       </div>
       <div id="content">
         <!-- insert the page content here -->
+        <section class="hero-slider" aria-label="SUN Lab highlights">
+          <div class="hero-slide is-active">
+            <img src="/assets/crane.jpg" alt="SUN Lab research highlight">
+            <div class="hero-caption"><strong>Visual Intelligence</strong><span>Compression, generation, and efficient computing</span></div>
+          </div>
+          <div class="hero-slide">
+            <img class="hero-contain" src="/assets/sun_lab.png" alt="SUN Lab research highlight">
+            <div class="hero-caption"><strong>From Algorithms to Hardware</strong><span>Turning research ideas into efficient systems</span></div>
+          </div>
+          <div class="hero-dots" aria-label="Select a slide">
+            <button class="is-active" type="button" aria-label="Show slide 1"></button>
+            <button type="button" aria-label="Show slide 2"></button>
+          </div>
+        </section>
+
         <h2>Welcome to SUN Lab</h2>
 
         <p>The laboratory conducts research on image and video processing, neural networks, and related hardware acceleration. Representative research topics are listed below.</p>
@@ -117,13 +141,11 @@
         <li> <strong>Session Chair</strong>, <i>IEEE VCIP 2023/2024, PCS 2024, IEEE ISCAS 2025/2026.</i></li>
         <li> <strong>Special Session Organizer</strong>, <i>PCS 2019/2022</i>.</li>
         <li>
-          <strong>Workshop Organizer</strong>
-          <ul>
-            <li><a href="https://www.ieeecfm.org/home/2023">IEEE ICME 2023</a></li>
-            <li><a href="https://www.ieeecfm.org/home/2024">IEEE ICME 2024</a></li>
-            <li><a href="https://www.ieeecfm.org/home/2025">IEEE ICIP 2025</a></li>
-            <li><a href="https://www.ieeecfm.org/">IEEE ICIP 2026</a></li>
-          </ul>
+          <strong>Workshop Organizer</strong>, 
+            <i><a href="https://www.ieeecfm.org/home/2023">IEEE ICME 2023, </a></i>
+            <i><a href="https://www.ieeecfm.org/home/2024">IEEE ICME 2024, </a></i>
+            <i><a href="https://www.ieeecfm.org/home/2025">IEEE ICIP 2025, </a></i>
+            <i><a href="https://www.ieeecfm.org/">IEEE ICIP 2026</a></i>
         </li>
         <li> <strong>Review Committee Member</strong>, <i>IEEE ISCAS 2022-2026</i>.</li>
         <li> <strong>Reviewer</strong>, <i>TPAMI, TIP, TMM, TCSVT, TCAS-I, TCAS-II, CVPR, ICCV, ECCV, ICLR, ISCAS, VCIP, PCS</i>. </li>
@@ -203,5 +225,39 @@
       <p><a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a></p>
     </div>
   </div>
+  <script>
+    document.querySelectorAll(".hero-slider").forEach(function (slider) {
+      var slides = slider.querySelectorAll(".hero-slide");
+      var dots = slider.querySelectorAll(".hero-dots button");
+      var current = 0;
+      var timer;
+
+      function showSlide(index) {
+        slides[current].classList.remove("is-active");
+        dots[current].classList.remove("is-active");
+        current = index;
+        slides[current].classList.add("is-active");
+        dots[current].classList.add("is-active");
+      }
+
+      function startSlider() {
+        timer = window.setInterval(function () {
+          showSlide((current + 1) % slides.length);
+        }, 6000);
+      }
+
+      dots.forEach(function (dot, index) {
+        dot.addEventListener("click", function () {
+          window.clearInterval(timer);
+          showSlide(index);
+          startSlider();
+        });
+      });
+
+      slider.addEventListener("mouseenter", function () { window.clearInterval(timer); });
+      slider.addEventListener("mouseleave", startSlider);
+      startSlider();
+    });
+  </script>
 </body>
 </html>
