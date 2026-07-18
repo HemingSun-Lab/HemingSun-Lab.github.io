@@ -296,6 +296,26 @@ ul#menu li.selected a:hover
   margin-bottom: 10px;
 }
 
+.research-focus p {
+  color: #667788;
+  font-size: 0.94em;
+  line-height: 1.55em;
+  padding: 0 0 10px 6px;
+}
+
+.research-focus ul {
+  margin: 2px 0 10px 18px;
+}
+
+.research-focus li {
+  list-style-type: circle;
+  margin: 0 0 6px 0;
+  padding: 0 0 2px 2px;
+  color: #27435e;
+  line-height: 1.45em;
+}
+
+
 .join-us .join-intro {
   color: #667788;
   font-size: 0.94em;
@@ -560,7 +580,7 @@ summary:hover {
 .home-content > details > summary {
   position: relative;
   margin: 12px 0 8px 0;
-  padding: 10px 42px 10px 15px;
+  padding: 10px 15px 10px 50px;
   color: #003F7F;
   background: linear-gradient(90deg, #eaf4fd, #f8fbfe);
   border: 1px solid #cfe0ef;
@@ -577,15 +597,27 @@ summary:hover {
   display: none;
 }
 
-.home-content > details > summary::after {
+.home-content > details > summary::marker {
+  content: "";
+}
+
+.home-content > details > summary::before {
   content: "+";
   position: absolute;
   top: 50%;
-  right: 14px;
-  color: #3877b5;
-  font-size: 1.35em;
-  line-height: 1em;
-  transform: translateY(-52%);
+  left: 14px;
+  width: 24px;
+  height: 22px;
+  color: #1d5f96;
+  background: #e3f1fc;
+  border: 1px solid #bdd7ee;
+  border-radius: 3px;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  transform: translateY(-50%);
 }
 
 .home-content > details[open] > summary {
@@ -594,9 +626,12 @@ summary:hover {
   border-color: #003F7F;
 }
 
-.home-content > details[open] > summary::after {
-  content: "−";
-  color: #FFF;
+.home-content > details[open] > summary::before {
+  content: "-";
+  color: #003F7F;
+  background: #FFF;
+  border-color: rgba(255, 255, 255, 0.78);
+  transform: translateY(-50%);
 }
 
 .section-card {
@@ -886,7 +921,7 @@ summary:hover {
 .publications-content > details > summary {
   position: relative;
   margin: 0;
-  padding: 10px 42px 10px 15px;
+  padding: 10px 15px 10px 50px;
   color: #003F7F;
   background: linear-gradient(90deg, #eaf4fd, #f8fbfe);
   border: 1px solid #cfe0ef;
@@ -902,15 +937,27 @@ summary:hover {
   display: none;
 }
 
-.publications-content > details > summary::after {
+.publications-content > details > summary::marker {
+  content: "";
+}
+
+.publications-content > details > summary::before {
   content: "+";
   position: absolute;
   top: 50%;
-  right: 14px;
-  color: #3877b5;
-  font-size: 1.35em;
-  line-height: 1em;
-  transform: translateY(-52%);
+  left: 14px;
+  width: 24px;
+  height: 22px;
+  color: #1d5f96;
+  background: #e3f1fc;
+  border: 1px solid #bdd7ee;
+  border-radius: 3px;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  transform: translateY(-50%);
 }
 
 .publications-content > details[open] > summary {
@@ -919,9 +966,12 @@ summary:hover {
   border-color: #003F7F;
 }
 
-.publications-content > details[open] > summary::after {
-  content: "−";
-  color: #FFF;
+.publications-content > details[open] > summary::before {
+  content: "-";
+  color: #003F7F;
+  background: #FFF;
+  border-color: rgba(255, 255, 255, 0.78);
+  transform: translateY(-50%);
 }
 
 .publications-content > details > p {
@@ -1063,6 +1113,76 @@ summary:hover {
 }
 
 
+/* ===== Homepage top information lists ===== */
+#content.home-content > h2 + p {
+  margin: 7px 4px 10px 8px;
+  padding: 10px 12px;
+  color: #4d5d6c;
+  background: #fbfdff;
+  border: 1px solid #e6edf3;
+  border-left: 4px solid #8cbce5;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 35, 70, 0.04);
+  line-height: 1.65em;
+}
+
+#content.home-content > h2 + p + ul,
+#content.home-content > h2 + ul {
+  margin: 7px 4px 12px 8px;
+  padding-left: 0;
+  list-style: none;
+}
+
+#content.home-content > h2 + p + ul > li,
+#content.home-content > h2 + ul > li {
+  list-style: none;
+  list-style-type: none;
+  margin: 7px 0 0 0;
+  padding: 9px 12px;
+  color: #4d5d6c;
+  background: #fbfdff;
+  border: 1px solid #e6edf3;
+  border-left: 4px solid #8cbce5;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 35, 70, 0.04);
+  line-height: 1.65em;
+}
+
+#content.home-content > h2 + p:hover,
+#content.home-content > h2 + p + ul > li:hover,
+#content.home-content > h2 + ul > li:hover {
+  background: #FFF;
+  box-shadow: 0 2px 7px rgba(0, 63, 127, 0.08);
+}
+
+/* ===== Homepage service lists ===== */
+.home-content > details > ul {
+  margin: 7px 4px 12px 8px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.home-content > details > ul > li,
+#content.home-content > details > ul > li {
+  list-style: none;
+  list-style-type: none;
+  margin: 7px 0 0 0;
+  padding: 9px 12px;
+  color: #4d5d6c;
+  background: #fbfdff;
+  border: 1px solid #e6edf3;
+  border-left: 4px solid #8cbce5;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 35, 70, 0.04);
+  line-height: 1.65em;
+}
+
+.home-content > details > ul > li:hover,
+#content.home-content > details > ul > li:hover {
+  background: #FFF;
+  box-shadow: 0 2px 7px rgba(0, 63, 127, 0.08);
+}
+
 /* ===== Homepage news cards ===== */
 .home-content > details > .news-item {
   margin: 7px 4px 0 8px;
@@ -1080,23 +1200,28 @@ summary:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 25px;
-  height: 25px;
-  margin-right: 7px;
-  border-radius: 50%;
-  font-size: 1.05em;
+  min-width: 54px;
+  height: 22px;
+  margin-right: 9px;
+  padding: 0 8px;
+  border-radius: 3px;
+  color: #17456f;
+  font-size: 0.84em;
+  font-weight: bold;
   line-height: 1em;
+  text-align: center;
   vertical-align: middle;
+  box-sizing: border-box;
 }
 
 .home-content .news-paper { border-left-color: #4d91cf; }
-.home-content .news-paper .news-icon { background: #e3f1fc; }
+.home-content .news-paper .news-icon { background: #e3f1fc; color: #1d5f96; }
 .home-content .news-grant { border-left-color: #48a078; }
-.home-content .news-grant .news-icon { background: #e2f5eb; }
+.home-content .news-grant .news-icon { background: #e2f5eb; color: #287452; }
 .home-content .news-award { border-left-color: #d49a24; }
-.home-content .news-award .news-icon { background: #fff2cc; }
+.home-content .news-award .news-icon { background: #fff2cc; color: #8a6312; }
 .home-content .news-talk { border-left-color: #8866bd; }
-.home-content .news-talk .news-icon { background: #eee7fa; }
+.home-content .news-talk .news-icon { background: #eee7fa; color: #65499a; }
 
 .home-content > details > .news-item:hover {
   background: #FFF;
