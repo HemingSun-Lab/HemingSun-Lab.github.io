@@ -47,49 +47,115 @@
         </div>
         <p class="back-link"><a href="research.html">Back to Research</a></p>
 
+
         <h2 id="learned-image-compression">Learned Image Compression</h2>
-        <p>Traditional image compression standards have been developed over more than 30 years. In contrast, with the rapid advances in neural networks, learned image compression (LIC) has demonstrated superior coding performance compared with traditional image compression standards. Two representative LIC networks proposed in CVPR 2020 and CVPR 2023 are presented below.</p>
-        <div style="text-align:center">
-          <img src="/assets/cvpr20.png" width="760" height="239"> 
-          <p> We proposed a LIC model incorporating a Gaussian mixture model (GMM) and attention mechanisms, achieving state-of-the-art performance in 2020. </p>
-          <img src="/assets/cvpr23.png" width="760" height="239">
-          <p> We proposed a LIC framework that combines transformer and CNN architectures, achieving state-of-the-art performance in 2023.</p>
+        <p>Traditional image compression standards have been developed over more than 30 years. In contrast, learned image compression has demonstrated superior coding performance with neural networks.</p>
+        <div class="research-project-list">
+          <article class="research-project-card">
+            <div class="research-project-info">
+              <a class="research-venue" href="https://openaccess.thecvf.com/content_CVPR_2020/html/Cheng_Learned_Image_Compression_With_Discretized_Gaussian_Mixture_Likelihoods_and_Attention_CVPR_2020_paper.html" target="_blank" rel="noopener">CVPR 2020</a>
+              <h3>Learned Image Compression with GMM and Attention</h3>
+              <p>We proposed a learned image compression model incorporating a Gaussian mixture model and attention mechanisms, achieving state-of-the-art performance in 2020.</p>
+              <p class="research-links"><a href="https://github.com/InterDigitalInc/CompressAI">Code</a></p>
+            </div>
+            <div class="research-project-media">
+              <img src="/assets/cvpr20.png" alt="CVPR 2020 learned image compression architecture">
+            </div>
+          </article>
+          <article class="research-project-card">
+            <div class="research-project-info">
+              <a class="research-venue" href="https://openaccess.thecvf.com/content/CVPR2023/html/Liu_Learned_Image_Compression_With_Mixed_Transformer-CNN_Architectures_CVPR_2023_paper.html" target="_blank" rel="noopener">CVPR 2023 Highlight</a>
+              <h3>Learned Image Compression with Mixed Transformer-CNN Architectures</h3>
+              <p>We proposed a framework that combines Transformer and CNN architectures for high-efficiency learned image compression.</p>
+              <p class="research-links"><a href="https://github.com/jmliu206/LIC_TCM">Code</a></p>
+            </div>
+            <div class="research-project-media">
+              <img src="/assets/cvpr23.png" alt="CVPR 2023 learned image compression architecture">
+            </div>
+          </article>
         </div>
 
         <h2 id="learned-video-compression">Learned Video Compression</h2>
-        <p>Traditional video compression standards have also been developed for over 30 years. Similar to image compression, learned video compression (LVC) has demonstrated superior coding efficiency compared with traditional video compression standards. The proposed LVC network (CVPR 2025) is shown below.</p>
-        <div style="text-align:center">
-          <img src="/assets/cvpr25.png" width="760" height="239"> 
-          <p> Proposed LVC with feature level attention. </p>
+        <p>Learned video compression has demonstrated superior coding efficiency compared with traditional video compression standards.</p>
+        <div class="research-project-list">
+          <article class="research-project-card">
+            <div class="research-project-info">
+              <a class="research-venue" href="https://icml.cc/virtual/2026/poster/63741" target="_blank" rel="noopener">ICML 2026</a>
+              <h3>MoVie: Multimodal Video Compression with Text Guidance</h3>
+              <p>MoVie is a text-guided multimodal video compression framework that combines video-centric Transformer-CNN blocks, dual-stage text fusion, and history-conditioned coding.</p>
+            </div>
+            <div class="research-project-media">
+              <img src="/assets/movie_fig2_left.png" alt="MoVie multimodal video compression framework">
+            </div>
+          </article>
+          <article class="research-project-card">
+            <div class="research-project-info">
+              <a class="research-venue" href="https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_FLAVC_Learned_Video_Compression_with_Feature_Level_Attention_CVPR_2025_paper.html" target="_blank" rel="noopener">CVPR 2025</a>
+              <h3>Learned Video Compression with Feature-Level Attention</h3>
+              <p>We proposed a learned video compression network using feature-level attention to improve coding efficiency.</p>
+            </div>
+            <div class="research-project-media">
+              <img src="/assets/cvpr25.png" alt="CVPR 2025 learned video compression architecture">
+            </div>
+          </article>
         </div>
 
-        <h2 id="image-coding-for-machine">Image Coding for Machine</h2>
-        <p>Cisco has reported that machine-to-machine communication will account for up to 50% of all network traffic in the forthcoming IoT society. Consequently, reducing the transmission burden between machines has become increasingly important. Unlike human-oriented visual coding, image coding for machines aims to improve the accuracy of machine vision tasks, such as object detection and tracking.</p>
-        <div style="text-align:center">
-          <img src="/assets/pcs22.png" width="760" height="239">
-          <p> Proposed semantic segmentation in learned compressed domain</p>
+        <h2 id="image-coding-for-machine">Image Coding for Machines</h2>
+        <p>Image coding for machines aims to improve the accuracy of machine vision tasks, such as object detection and tracking, while reducing transmission cost.</p>
+        <div class="research-project-list">
+          <article class="research-project-card">
+            <div class="research-project-info">
+              <a class="research-venue" href="https://doi.org/10.1109/PCS56426.2022.10018036" target="_blank" rel="noopener">PCS 2022</a>
+              <h3>Semantic Segmentation in Learned Compressed Domain</h3>
+              <p>We studied semantic analysis directly in the learned compressed domain to support efficient machine-oriented visual coding.</p>
+            </div>
+            <div class="research-project-media">
+              <img src="/assets/pcs22.png" alt="Image coding for machines framework">
+            </div>
+          </article>
         </div>
 
         <h2 id="fpga-lic-systems">FPGA-Based LIC Systems</h2>
-        <p>Among various hardware platforms, FPGAs offer higher hardware utilization and superior power efficiency compared with CPUs and GPUs. In addition, relative to ASICs, FPGAs provide greater flexibility and reconfigurability, enabling them to adapt to the rapid evolution of neural network models. Leveraging these advantages, we developed an FPGA-based neural engine with a fine-grained pipeline architecture and applied it to the LIC system.</p>
-        <div style="text-align:center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/-unSbqsUS8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <p> A camera (bottom right) captures raw video at 720p and 30 fps, which is displayed on the right monitor. The captured video is then encoded by a Xilinx VCU118 FPGA board. The resulting bitstream is transmitted to a second FPGA board for decoding. Finally, the decoded video is displayed on the left monitor.</p>
+        <p>FPGAs provide flexibility, reconfigurability, and high power efficiency. We developed FPGA-based neural engines and applied them to real-time learned image compression systems.</p>
+        <div class="research-project-list">
+          <article class="research-project-card fpga-demo-card">
+            <div class="research-project-info">
+              <div class="research-venue-stack">
+                <a class="research-venue" href="https://ieeexplore.ieee.org/document/10008876" target="_blank" rel="noopener">VCIP 2022 Best Demo Award</a>
+                <a class="research-venue" href="https://doi.org/10.1109/A-SSCC56115.2022.9980666" target="_blank" rel="noopener">A-SSCC 2022</a>
+              </div>
+              <h3>Real-Time Learned Image Codec on FPGA</h3>
+              <p>The demo system captures 720p 30 fps video, encodes it on a Xilinx VCU118 FPGA board, decodes it on another FPGA board, evaluates latency and power, and verifies cross-platform operation.</p>
+              <p class="research-links"><a href="https://www.youtube.com/watch?v=-unSbqsUS8Y">Demo 1</a><a href="https://www.youtube.com/watch?v=Y4QO2h0LEDQ">Demo 2</a><a href="https://www.bilibili.com/video/BV1ma411Z7ib/">Bilibili</a></p>
+            </div>
+            <div class="research-project-media video-thumb-media">
+              <div class="research-video-grid">
+                <a class="research-video-thumb" href="https://www.youtube.com/watch?v=-unSbqsUS8Y" target="_blank" rel="noopener">
+                  <img src="/assets/fpga-lic-demo.jpg" alt="Real-time learned image codec demo">
+                  <span>Real-time codec</span>
+                </a>
+                <a class="research-video-thumb" href="https://www.youtube.com/watch?v=Y4QO2h0LEDQ" target="_blank" rel="noopener">
+                  <img src="https://img.youtube.com/vi/Y4QO2h0LEDQ/hqdefault.jpg" alt="Latency and power measurement demo">
+                  <span>Latency and power</span>
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
-        <div style="text-align:center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/Y4QO2h0LEDQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <p> To evaluate the system latency, real-time timestamps are embedded and captured during processing. The difference between the original (raw) timestamp and the decoded timestamp is defined as the end-to-end latency, which is approximately 560 ms. In addition, a power meter is used to measure the actual power consumption of the entire FPGA board.</p>
-        </div>
-        <div style="text-align:center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/9EYDdCLGlNY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <p> The encoder is implemented on a Xilinx VCU118 FPGA board, while the decoder is implemented on a Xilinx KU115 FPGA board. The video is correctly decoded and displayed on the left monitor, demonstrating the cross-platform coding capability of the proposed system.</p>
+        <h2 id="asic-chip-design">ASIC Chip Design</h2>
+        <div class="research-project-list">
+          <article class="research-project-card">
+            <div class="research-project-info">
+              <a class="research-venue" href="https://ieeexplore.ieee.org/document/7418009" target="_blank" rel="noopener">ISSCC 2016</a>
+              <h3>8K HEVC Decoder Chip</h3>
+              <p>We developed an 8K 120 fps HEVC decoder chip. I was responsible for the inverse transform and dequantization modules.</p>
+            </div>
+            <div class="research-project-media compact-media">
+              <img src="/assets/isscc16.png" alt="ISSCC 2016 HEVC decoder chip">
+            </div>
+          </article>
         </div>
 
-        <h2 id="asic-chip-design">ASIC Chip Design</h2>
-        <div style="text-align:center">
-          <img src="/assets/isscc16.png" width="300" height="300"> 
-          <p>Developed an 8K@120 fps HEVC decoder chip, in which I was responsible for the inverse transform (IT) and dequantization (IQ) modules.</p>
-        </div>
 
     </div>
     <div id="content_footer"></div>

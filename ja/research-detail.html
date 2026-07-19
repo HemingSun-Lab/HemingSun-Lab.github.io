@@ -47,49 +47,115 @@
         </div>
         <p class="back-link"><a href="research.html">研究内容へ戻る</a></p>
 
+
         <h2 id="learned-image-compression">学習型画像圧縮（Learned Image Compression: LIC）</h2>
-        <p>従来の画像圧縮標準は、30年以上にわたって開発されてきました。一方、ニューラルネットワークの急速な進展に伴い、学習型画像圧縮は、従来の画像圧縮標準と比較して優れた符号化性能を示しています。以下に、CVPR 2020 および CVPR 2023 にて提案された代表的な LIC ネットワークを示します。</p>
-        <div style="text-align:center">
-          <img src="/assets/cvpr20.png" width="760" height="239"> 
-          <p> 我々は，ガウス混合モデルと注意機構を組み込んだ学習型画像圧縮モデルを提案し、2020年において最先端性能を達成した。</p>
-          <img src="/assets/cvpr23.png" width="760" height="239">
-          <p> 我々は，TransformerとCNNを融合した学習型画像圧縮フレームワークを提案し、2023年において最先端性能を達成した。</p>
+        <p>ニューラルネットワークの急速な進展に伴い、学習型画像圧縮は従来の画像圧縮標準と比較して優れた符号化性能を示しています。</p>
+        <div class="research-project-list">
+          <article class="research-project-card">
+            <div class="research-project-info">
+              <a class="research-venue" href="https://openaccess.thecvf.com/content_CVPR_2020/html/Cheng_Learned_Image_Compression_With_Discretized_Gaussian_Mixture_Likelihoods_and_Attention_CVPR_2020_paper.html" target="_blank" rel="noopener">CVPR 2020</a>
+              <h3>GMM と注意機構による学習型画像圧縮</h3>
+              <p>ガウス混合モデルと注意機構を組み込んだ学習型画像圧縮モデルを提案し、2020年時点で最先端性能を達成しました。</p>
+              <p class="research-links"><a href="https://github.com/InterDigitalInc/CompressAI">Code</a></p>
+            </div>
+            <div class="research-project-media">
+              <img src="/assets/cvpr20.png" alt="CVPR 2020 学習型画像圧縮アーキテクチャ">
+            </div>
+          </article>
+          <article class="research-project-card">
+            <div class="research-project-info">
+              <a class="research-venue" href="https://openaccess.thecvf.com/content/CVPR2023/html/Liu_Learned_Image_Compression_With_Mixed_Transformer-CNN_Architectures_CVPR_2023_paper.html" target="_blank" rel="noopener">CVPR 2023 Highlight</a>
+              <h3>Transformer-CNN 混合アーキテクチャによる学習型画像圧縮</h3>
+              <p>Transformer と CNN を融合した高効率な学習型画像圧縮フレームワークを提案しました。</p>
+              <p class="research-links"><a href="https://github.com/jmliu206/LIC_TCM">Code</a></p>
+            </div>
+            <div class="research-project-media">
+              <img src="/assets/cvpr23.png" alt="CVPR 2023 学習型画像圧縮アーキテクチャ">
+            </div>
+          </article>
         </div>
 
         <h2 id="learned-video-compression">学習型動画像圧縮（Learned Video Compression: LVC）</h2>
-        <p>従来の動画像圧縮標準は、30年以上にわたって発展してきた。画像圧縮と同様に、学習型動画像圧縮は、従来の動画像圧縮標準と比較して優れた符号化効率を示している。以下に、提案する学習型動画像圧縮ネットワーク（CVPR 2025）を示す。</p>
-        <div style="text-align:center">
-          <img src="/assets/cvpr25.png" width="760" height="239"> 
-          <p> 特徴レベル注意機構（Feature-level Attention）を導入した学習型動画像圧縮（LVC）</p>
+        <p>学習型動画像圧縮は、従来の動画像圧縮標準と比較して優れた符号化効率を示しています。</p>
+        <div class="research-project-list">
+          <article class="research-project-card">
+            <div class="research-project-info">
+              <a class="research-venue" href="https://icml.cc/virtual/2026/poster/63741" target="_blank" rel="noopener">ICML 2026</a>
+              <h3>MoVie: テキスト誘導によるマルチモーダル動画像圧縮</h3>
+              <p>MoVie は、映像中心の Transformer-CNN ブロック、二段階のテキスト融合、履歴条件付き符号化を組み合わせたテキスト誘導型のマルチモーダル動画像圧縮フレームワークです。</p>
+            </div>
+            <div class="research-project-media">
+              <img src="/assets/movie_fig2_left.png" alt="MoVie マルチモーダル動画像圧縮フレームワーク">
+            </div>
+          </article>
+          <article class="research-project-card">
+            <div class="research-project-info">
+              <a class="research-venue" href="https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_FLAVC_Learned_Video_Compression_with_Feature_Level_Attention_CVPR_2025_paper.html" target="_blank" rel="noopener">CVPR 2025</a>
+              <h3>特徴レベル注意機構を用いた学習型動画像圧縮</h3>
+              <p>Feature-level Attention を導入した学習型動画像圧縮ネットワークを提案しました。</p>
+            </div>
+            <div class="research-project-media">
+              <img src="/assets/cvpr25.png" alt="CVPR 2025 学習型動画像圧縮アーキテクチャ">
+            </div>
+          </article>
         </div>
 
         <h2 id="image-coding-for-machine">マシン向け画像符号化（Image Coding for Machines）</h2>
-        <p>Cisco の報告によると、将来の IoT 社会において、マシン・ツー・マシン（Machine-to-Machine：M2M）通信は、全ネットワークトラフィックの最大50％を占めると予測されています。そのため、機械間通信における伝送負荷の低減は、ますます重要になっています。人間向けの視覚符号化とは異なり、マシン向け画像符号化は、物体検出や追跡といった機械視覚タスクの精度向上を目的としています。</p>
-        <div style="text-align:center">
-          <img src="/assets/pcs22.png" width="760" height="239">
-          <p> 学習型圧縮ドメインにおける意味セグメンテーションの提案</p>
+        <p>マシン向け画像符号化は、伝送量を削減しながら物体検出や追跡などの機械視覚タスクの精度向上を目的としています。</p>
+        <div class="research-project-list">
+          <article class="research-project-card">
+            <div class="research-project-info">
+              <a class="research-venue" href="https://doi.org/10.1109/PCS56426.2022.10018036" target="_blank" rel="noopener">PCS 2022</a>
+              <h3>学習型圧縮ドメインにおける意味セグメンテーション</h3>
+              <p>学習型圧縮ドメイン上で意味解析を行うことで、マシン向けの効率的な視覚符号化を検討しました。</p>
+            </div>
+            <div class="research-project-media">
+              <img src="/assets/pcs22.png" alt="マシン向け画像符号化フレームワーク">
+            </div>
+          </article>
         </div>
 
         <h2 id="fpga-lic-systems">FPGA ベース学習型画像圧縮（LIC）システム</h2>
-        <p>さまざまなハードウェアプラットフォームの中で、FPGA は CPU や GPU と比較して高いハードウェア利用率と優れた電力効率を有しています。また、ASIC と比べて柔軟性および再構成性に優れており、ニューラルネットワークモデルの急速な進化にも対応可能です。これらの利点を活かし、我々は微細粒度パイプラインアーキテクチャを備えた FPGA ベースのニューラルエンジンを開発し、学習型画像圧縮（LIC）システムに適用しました。</p>
-        <div style="text-align:center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/-unSbqsUS8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <p> 右下のカメラで 720p・30 fps の生動画を撮影し、その映像を右側のモニタに表示します。撮影された映像は、Xilinx VCU118 FPGA ボードによって符号化されます。生成されたビットストリームは、別の FPGA ボードに送信され、そこで復号されます。最後に、復号された映像が左側のモニタに表示されます。</p>
+        <p>FPGA の柔軟性、再構成性、電力効率を活かし、学習型画像圧縮向けの FPGA ベースニューラルエンジンとリアルタイムシステムを開発しました。</p>
+        <div class="research-project-list">
+          <article class="research-project-card fpga-demo-card">
+            <div class="research-project-info">
+              <div class="research-venue-stack">
+                <a class="research-venue" href="https://ieeexplore.ieee.org/document/10008876" target="_blank" rel="noopener">VCIP 2022 Best Demo Award</a>
+                <a class="research-venue" href="https://doi.org/10.1109/A-SSCC56115.2022.9980666" target="_blank" rel="noopener">A-SSCC 2022</a>
+              </div>
+              <h3>FPGA 上のリアルタイム学習型画像コーデック</h3>
+              <p>本デモでは、720p・30 fps の映像を取得し、Xilinx VCU118 FPGA ボードで符号化、別の FPGA ボードで復号します。さらに、遅延・消費電力評価と異なる FPGA 間での動作を実証しています。</p>
+              <p class="research-links"><a href="https://www.youtube.com/watch?v=-unSbqsUS8Y">Demo 1</a><a href="https://www.youtube.com/watch?v=Y4QO2h0LEDQ">Demo 2</a><a href="https://www.bilibili.com/video/BV1ma411Z7ib/">Bilibili</a></p>
+            </div>
+            <div class="research-project-media video-thumb-media">
+              <div class="research-video-grid">
+                <a class="research-video-thumb" href="https://www.youtube.com/watch?v=-unSbqsUS8Y" target="_blank" rel="noopener">
+                  <img src="/assets/fpga-lic-demo.jpg" alt="リアルタイム学習型画像コーデックデモ">
+                  <span>リアルタイムコーデック</span>
+                </a>
+                <a class="research-video-thumb" href="https://www.youtube.com/watch?v=Y4QO2h0LEDQ" target="_blank" rel="noopener">
+                  <img src="https://img.youtube.com/vi/Y4QO2h0LEDQ/hqdefault.jpg" alt="遅延・消費電力評価デモ">
+                  <span>遅延・消費電力評価</span>
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
-        <div style="text-align:center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/Y4QO2h0LEDQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <p> システム遅延を評価するため、処理過程においてリアルタイムのタイムスタンプを埋め込み、これを取得しています。元の（生映像の）タイムスタンプと復号後のタイムスタンプとの差をエンドツーエンド遅延と定義しており、その値は約 560 ms です。さらに、電力計を用いて FPGA ボード全体の実消費電力を測定しています。</p>
-        </div>
-        <div style="text-align:center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/9EYDdCLGlNY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <p> エンコーダは Xilinx VCU118 FPGA ボード上に実装され、デコーダは Xilinx KU115 FPGA ボード上に実装されています。映像は正しく復号され、左側のモニタに表示されており、提案システムのクロスプラットフォーム符号化能力を実証しています。</p>
+        <h2 id="asic-chip-design">ASIC チップ設計</h2>
+        <div class="research-project-list">
+          <article class="research-project-card">
+            <div class="research-project-info">
+              <a class="research-venue" href="https://ieeexplore.ieee.org/document/7418009" target="_blank" rel="noopener">ISSCC 2016</a>
+              <h3>8K HEVC デコーダチップ</h3>
+              <p>8K 120 fps 対応の HEVC デコーダチップを開発しました。私は逆変換および逆量子化モジュールを担当しました。</p>
+            </div>
+            <div class="research-project-media compact-media">
+              <img src="/assets/isscc16.png" alt="ISSCC 2016 HEVC デコーダチップ">
+            </div>
+          </article>
         </div>
 
-        <h2 id="asic-chip-design">ASIC チップ設計</h2>
-        <div style="text-align:center">
-          <img src="/assets/isscc16.png" width="300" height="300"> 
-          <p>8K・120 fps 対応の HEVC デコーダチップを開発しました。私は、その中で逆変換（Inverse Transform：IT）および逆量子化（Inverse Quantization：IQ）モジュールを担当しました。</p>
-        </div>
 
     </div>
     <div id="content_footer"></div>
