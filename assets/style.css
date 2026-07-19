@@ -1227,3 +1227,62 @@ summary:hover {
   background: #FFF;
   box-shadow: 0 2px 7px rgba(0, 63, 127, 0.08);
 }
+
+/* ===== Lightweight member lists ===== */
+.member-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+}
+
+.member-name {
+  color: #27435e;
+  line-height: 1.7em;
+  white-space: nowrap;
+}
+
+.member-name small {
+  color: #718093;
+  font-size: 0.92em;
+  margin-left: 4px;
+}
+
+.alumni-list {
+  flex-direction: column;
+  gap: 3px;
+}
+
+.member-page .member-card {
+  padding: 11px 14px;
+  background: #fbfdff;
+  border: 1px solid #e6edf3;
+  border-left: 4px solid #8cbce5;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 35, 70, 0.04);
+}
+
+.member-page .member-name {
+  color: #27435e;
+  line-height: 1.7em;
+  white-space: nowrap;
+}
+
+/* ===== Homepage hover alignment with publications ===== */
+#content.home-content > h2 + p,
+#content.home-content > h2 + p + ul > li,
+#content.home-content > h2 + ul > li,
+.home-content > details > ul > li,
+#content.home-content > details > ul > li,
+.home-content > details > .news-item {
+  background: #FFF;
+}
+
+#content.home-content > h2 + p:hover,
+#content.home-content > h2 + p + ul > li:hover,
+#content.home-content > h2 + ul > li:hover,
+.home-content > details > ul > li:hover,
+#content.home-content > details > ul > li:hover,
+.home-content > details > .news-item:hover {
+  background: #fbfdff;
+  border-left-color: #3877b5;
+}

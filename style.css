@@ -449,3 +449,35 @@ summary:hover {
     gap: 10px;
   }
 }
+/* ===== Lightweight member lists ===== */
+.member-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+}
+
+.member-name {
+  color: #27435e;
+  line-height: 1.7em;
+  white-space: nowrap;
+}
+
+.member-name small {
+  color: #718093;
+  font-size: 0.92em;
+  margin-left: 4px;
+}
+
+.alumni-list {
+  flex-direction: column;
+  gap: 3px;
+}
+
+.member-section .member-card {
+  padding: 11px 14px;
+  background: #fbfdff;
+  border: 1px solid #e6edf3;
+  border-left: 4px solid #8cbce5;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 35, 70, 0.04);
+}
