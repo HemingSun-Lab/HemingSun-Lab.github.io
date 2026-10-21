@@ -1222,6 +1222,8 @@ summary:hover {
 .home-content .news-award .news-icon { background: #fff2cc; color: #8a6312; }
 .home-content .news-talk { border-left-color: #8866bd; }
 .home-content .news-talk .news-icon { background: #eee7fa; color: #65499a; }
+.home-content .news-lab { border-left-color: #3f9da5; }
+.home-content .news-lab .news-icon { background: #e2f4f5; color: #287178; }
 
 .home-content > details > .news-item:hover {
   background: #FFF;
