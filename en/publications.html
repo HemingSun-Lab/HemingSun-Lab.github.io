@@ -44,6 +44,17 @@
           <h1>Publications</h1>
           <p>Selected journal articles, conference papers, and research contributions.</p>
         </div>
+        <section class="publication-filter" data-language="en" aria-label="Search publications">
+          <div class="publication-search-row">
+            <label class="publication-search" for="publication-search">
+              <span>Search publications</span>
+              <input id="publication-search" type="search" placeholder="Search by title, author, venue, or keyword" autocomplete="off">
+            </label>
+            <button class="publication-reset" type="button">Reset</button>
+          </div>
+          <p class="publication-result" aria-live="polite"></p>
+        </section>
+        <p class="publication-empty" hidden>No publications match your search.</p>
           <h2>Journals</h2>
           <details open>
             <summary>2026</summary>
@@ -248,10 +259,142 @@
 
     </div>
     <div id="content_footer"></div>
-    <div id="footer">
-      <p><a href="index.html">Home</a> | <a href="publications.html">Publications</a> | <a href="member.html">Member</a> | <a href="research.html">Research</a> | <a href="event.html">Event</a></p>
-      <p><a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a></p>
-    </div>
+    <footer id="footer" class="site-footer">
+      <div class="footer-inner">
+        <section class="footer-brand" aria-labelledby="footer-brand-title">
+          <h2 id="footer-brand-title"><a href="/en/">SUN Lab</a></h2>
+          <p class="footer-tagline">Visual Computing and Efficient Intelligence</p>
+          <p class="footer-summary">We explore learned visual coding, efficient AI, and hardware acceleration.</p>
+        </section>
+        <section class="footer-contact" aria-labelledby="footer-contact-title">
+          <h3 id="footer-contact-title">Institute of Science Tokyo</h3>
+          <p>School of Computing<br>W8-E502, 2-12-1 Ookayama, Meguro-ku, Tokyo 152-8550, Japan</p>
+          <p><a href="mailto:son.k.2b4a@m.isct.ac.jp">son.k.2b4a@m.isct.ac.jp</a></p>
+        </section>
+        <section class="footer-resources" aria-labelledby="footer-resources-title">
+          <h3 id="footer-resources-title">Connect</h3>
+          <div class="footer-resource-links">
+            <a href="https://scholar.google.co.jp/citations?hl=ja&amp;user=LtkiCFcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          </div>
+          <nav class="footer-language" aria-label="Language">
+            <span>Language</span>
+            <a class="active" href="/en/">EN</a>
+            <a href="/ja/">JP</a>
+          </nav>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023-2026 SUN Lab. All rights reserved.</p>
+        <p class="footer-credit">Original template by <a href="https://www.html5webtemplates.co.uk/" target="_blank" rel="noopener">HTML5 Web Templates</a>.</p>
+      </div>
+    </footer>
   </div>
+  <script>
+    (function () {
+      const content = document.querySelector(".publications-content");
+      const searchPanel = content && content.querySelector(".publication-filter");
+
+      if (!content || !searchPanel) {
+        return;
+      }
+
+      const search = searchPanel.querySelector("#publication-search");
+      const reset = searchPanel.querySelector(".publication-reset");
+      const result = searchPanel.querySelector(".publication-result");
+      const empty = content.querySelector(".publication-empty");
+      const isJapanese = searchPanel.dataset.language === "ja";
+      const sections = [];
+
+      Array.from(content.children)
+        .filter(function (element) {
+          return element.tagName === "H2";
+        })
+        .forEach(function (heading) {
+          const groups = [];
+          let sibling = heading.nextElementSibling;
+
+          while (sibling && sibling.tagName !== "H2") {
+            if (sibling.tagName === "DETAILS") {
+              const papers = Array.from(sibling.children).filter(function (element) {
+                return element.tagName === "P";
+              });
+
+              groups.push({
+                details: sibling,
+                papers: papers,
+                defaultOpen: sibling.open
+              });
+            }
+
+            sibling = sibling.nextElementSibling;
+          }
+
+          sections.push({
+            heading: heading,
+            groups: groups
+          });
+        });
+
+      function normalizedText(value) {
+        return value.toLocaleLowerCase().replace(/\s+/g, " ").trim();
+      }
+
+      function applySearch() {
+        const query = normalizedText(search.value);
+        let visibleCount = 0;
+
+        sections.forEach(function (section) {
+          let sectionHasResults = false;
+
+          section.groups.forEach(function (group) {
+            let groupHasResults = false;
+
+            group.papers.forEach(function (paper) {
+              const visible = !query || normalizedText(paper.textContent).includes(query);
+
+              paper.hidden = !visible;
+              paper.classList.toggle("is-filter-hidden", !visible);
+
+              if (visible) {
+                visibleCount += 1;
+                groupHasResults = true;
+                sectionHasResults = true;
+              }
+            });
+
+            group.details.hidden = !groupHasResults;
+            group.details.classList.toggle("is-filter-hidden", !groupHasResults);
+
+            if (groupHasResults && query) {
+              group.details.open = true;
+            } else if (!query) {
+              group.details.open = group.defaultOpen;
+            }
+          });
+
+          section.heading.hidden = !sectionHasResults;
+          section.heading.classList.toggle("is-filter-hidden", !sectionHasResults);
+        });
+
+        if (isJapanese) {
+          result.textContent = visibleCount + "件の研究成果を表示しています";
+        } else {
+          result.textContent = "Showing " + visibleCount + " publication" + (visibleCount === 1 ? "" : "s");
+        }
+
+        empty.hidden = visibleCount !== 0;
+      }
+
+      search.addEventListener("input", applySearch);
+
+      reset.addEventListener("click", function () {
+        search.value = "";
+        applySearch();
+        search.focus();
+      });
+
+      applySearch();
+    }());
+  </script>
 </body>
 </html>

@@ -44,6 +44,17 @@
           <h1>研究業績</h1>
           <p>論文誌、国際会議、国内学会における研究成果をご紹介します。</p>
         </div>
+        <section class="publication-filter" data-language="ja" aria-label="研究成果を検索">
+          <div class="publication-search-row">
+            <label class="publication-search" for="publication-search">
+              <span>研究成果を検索</span>
+              <input id="publication-search" type="search" placeholder="論文名、著者、掲載誌・会議名、キーワードで検索" autocomplete="off">
+            </label>
+            <button class="publication-reset" type="button">リセット</button>
+          </div>
+          <p class="publication-result" aria-live="polite"></p>
+        </section>
+        <p class="publication-empty" hidden>検索条件に一致する研究成果はありません。</p>
           <h2>論文誌</h2>
           <details open>
             <summary>2026</summary>
@@ -248,10 +259,142 @@
 
     </div>
     <div id="content_footer"></div>
-    <div id="footer">
-      <p><a href="/ja/">Home</a> | <a href="/ja/publications.html">Publications</a> | <a href="/ja/member.html">Member</a> | <a href="/ja/research.html">Research</a> | <a href="/ja/event.html">Event</a></p>
-      <p><a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a></p>
-    </div>
+    <footer id="footer" class="site-footer">
+      <div class="footer-inner">
+        <section class="footer-brand" aria-labelledby="footer-brand-title">
+          <h2 id="footer-brand-title"><a href="/ja/">SUN Lab</a></h2>
+          <p class="footer-tagline">Visual Computing and Efficient Intelligence</p>
+          <p class="footer-summary">学習型符号化、効率的AI、ハードウェアアクセラレーションに関する研究に取り組んでいます。</p>
+        </section>
+        <section class="footer-contact" aria-labelledby="footer-contact-title">
+          <h3 id="footer-contact-title">東京科学大学</h3>
+          <p>情報理工学院<br>〒152-8550 東京都目黒区大岡山2-12-1 西8号館E棟502号室</p>
+          <p><a href="mailto:son.k.2b4a@m.isct.ac.jp">son.k.2b4a@m.isct.ac.jp</a></p>
+        </section>
+        <section class="footer-resources" aria-labelledby="footer-resources-title">
+          <h3 id="footer-resources-title">リンク</h3>
+          <div class="footer-resource-links">
+            <a href="https://scholar.google.co.jp/citations?hl=ja&amp;user=LtkiCFcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          </div>
+          <nav class="footer-language" aria-label="言語">
+            <span>言語</span>
+            <a href="/en/">EN</a>
+            <a class="active" href="/ja/">JP</a>
+          </nav>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023-2026 SUN Lab. All rights reserved.</p>
+        <p class="footer-credit">Original template by <a href="https://www.html5webtemplates.co.uk/" target="_blank" rel="noopener">HTML5 Web Templates</a>.</p>
+      </div>
+    </footer>
   </div>
+  <script>
+    (function () {
+      const content = document.querySelector(".publications-content");
+      const searchPanel = content && content.querySelector(".publication-filter");
+
+      if (!content || !searchPanel) {
+        return;
+      }
+
+      const search = searchPanel.querySelector("#publication-search");
+      const reset = searchPanel.querySelector(".publication-reset");
+      const result = searchPanel.querySelector(".publication-result");
+      const empty = content.querySelector(".publication-empty");
+      const isJapanese = searchPanel.dataset.language === "ja";
+      const sections = [];
+
+      Array.from(content.children)
+        .filter(function (element) {
+          return element.tagName === "H2";
+        })
+        .forEach(function (heading) {
+          const groups = [];
+          let sibling = heading.nextElementSibling;
+
+          while (sibling && sibling.tagName !== "H2") {
+            if (sibling.tagName === "DETAILS") {
+              const papers = Array.from(sibling.children).filter(function (element) {
+                return element.tagName === "P";
+              });
+
+              groups.push({
+                details: sibling,
+                papers: papers,
+                defaultOpen: sibling.open
+              });
+            }
+
+            sibling = sibling.nextElementSibling;
+          }
+
+          sections.push({
+            heading: heading,
+            groups: groups
+          });
+        });
+
+      function normalizedText(value) {
+        return value.toLocaleLowerCase().replace(/\s+/g, " ").trim();
+      }
+
+      function applySearch() {
+        const query = normalizedText(search.value);
+        let visibleCount = 0;
+
+        sections.forEach(function (section) {
+          let sectionHasResults = false;
+
+          section.groups.forEach(function (group) {
+            let groupHasResults = false;
+
+            group.papers.forEach(function (paper) {
+              const visible = !query || normalizedText(paper.textContent).includes(query);
+
+              paper.hidden = !visible;
+              paper.classList.toggle("is-filter-hidden", !visible);
+
+              if (visible) {
+                visibleCount += 1;
+                groupHasResults = true;
+                sectionHasResults = true;
+              }
+            });
+
+            group.details.hidden = !groupHasResults;
+            group.details.classList.toggle("is-filter-hidden", !groupHasResults);
+
+            if (groupHasResults && query) {
+              group.details.open = true;
+            } else if (!query) {
+              group.details.open = group.defaultOpen;
+            }
+          });
+
+          section.heading.hidden = !sectionHasResults;
+          section.heading.classList.toggle("is-filter-hidden", !sectionHasResults);
+        });
+
+        if (isJapanese) {
+          result.textContent = visibleCount + "件の研究成果を表示しています";
+        } else {
+          result.textContent = "Showing " + visibleCount + " publication" + (visibleCount === 1 ? "" : "s");
+        }
+
+        empty.hidden = visibleCount !== 0;
+      }
+
+      search.addEventListener("input", applySearch);
+
+      reset.addEventListener("click", function () {
+        search.value = "";
+        applySearch();
+        search.focus();
+      });
+
+      applySearch();
+    }());
+  </script>
 </body>
 </html>
